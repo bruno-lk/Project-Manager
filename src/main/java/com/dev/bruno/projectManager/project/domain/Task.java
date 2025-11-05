@@ -1,4 +1,4 @@
-package com.dev.bruno.projectManager.domain;
+package com.dev.bruno.projectManager.project.domain;
 
 import java.util.Date;
 import java.util.UUID;

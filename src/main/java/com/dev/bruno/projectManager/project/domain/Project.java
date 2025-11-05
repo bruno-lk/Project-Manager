@@ -1,4 +1,4 @@
-package com.dev.bruno.projectManager.domain;
+package com.dev.bruno.projectManager.project.domain;
 
 import java.util.Date;
 import java.util.List;
@@ -22,7 +22,6 @@ public class Project {
     }
 
     public void createProject(String name) {
-
         this.creationDate = new Date();
         this.id = UUID.randomUUID();
         this.name = name;

@@ -1,21 +1,25 @@
 package com.dev.bruno.projectManager.project.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 public class Project {
-    UUID id;
+    public UUID id;
     String name;
     Date creationDate;
     Date conclusionDate;
-    Status status;
-    List<Task> taskList;
+    public Status status;
+//    List<Task> taskList;
 
-    public Project(String name, Date creationDate, Status status) {
+    public Project(UUID id, String name, Date creationDate, Date conclusionDate, Status status) {
+        this.id = id;
         this.name = name;
         this.creationDate = creationDate;
+        this.conclusionDate = conclusionDate;
         this.status = status;
+//        this.taskList = taskList;
     }
 
     public Project() {
@@ -26,6 +30,7 @@ public class Project {
         this.id = UUID.randomUUID();
         this.name = name;
         this.status = Status.CREATED;
+//        this.taskList = new ArrayList<>();
     }
 
     public void finishProject(Date conclusionDate) throws Exception {
@@ -54,31 +59,11 @@ public class Project {
                 ", creationDate=" + creationDate +
                 ", conclusionDate=" + conclusionDate +
                 ", status=" + status +
-                ", taskList=" + taskList +
+//                ", taskList=" + taskList +
                 '}';
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public Date getConclusionDate() {
-        return conclusionDate;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public List<Task> getTaskList() {
-        return taskList;
-    }
+//    public List<Task> getTaskList() {
+//        return taskList;
+//    }
 }

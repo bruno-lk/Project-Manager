@@ -9,6 +9,7 @@ import java.util.UUID;
 @DomainService
 public class CreateProjectUseCase implements ICreateProjectUseCase {
 
+    @Override
     public UUID execute(String name) throws Exception {
         if (name == null || name.isEmpty()){
             throw new Exception("Nome inválido");
@@ -17,7 +18,7 @@ public class CreateProjectUseCase implements ICreateProjectUseCase {
         Project newProject = new Project();
         newProject.createProject(name);
 
-        return newProject.getId();
+        return newProject.id;
     }
 
 }
